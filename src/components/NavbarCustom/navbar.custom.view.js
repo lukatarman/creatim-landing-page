@@ -1,8 +1,8 @@
 import { Container, Nav, Navbar, NavDropdown, Col, Row } from "react-bootstrap";
 
-function NavbarCustom() {
+const NavbarCustom = () => {
   return (
-    <Navbar fixed="top" bg="light" expand="lg">
+    <Navbar fixed="top" bg="light" expand="lg" className="mb-5">
       <Container>
         <Navbar.Brand href="#home">Best Clothing Shop</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -51,6 +51,6 @@ function NavbarCustom() {
       </Container>
     </Navbar>
   );
-}
+};
 
 export default NavbarCustom;
