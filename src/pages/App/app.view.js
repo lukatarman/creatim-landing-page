@@ -12,7 +12,6 @@ const App = () => {
     <div className="pt-5">
       <NavbarCustom />
       <BannerSlider options={carouselOptions} />
-      
     </div>
   );
 };
