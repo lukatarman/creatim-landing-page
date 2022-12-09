@@ -3,7 +3,7 @@ import BannerSlider from "../../components/BannerSlider/banner.slider.view.js";
 
 const App = () => {
   return (
-    <div>
+    <div className="pt-5">
       <NavbarCustom />
       <BannerSlider options={carouselOptions} />
       
