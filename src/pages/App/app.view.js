@@ -1,5 +1,6 @@
 import NavbarCustom from "../../components/NavbarCustom/navbar.custom.view.js";
 import BannerSlider from "../../components/BannerSlider/banner.slider.view.js";
+import Products from "../../components/Products/products.view.js";
 
 const App = () => {
   const carouselOptions = [
@@ -12,6 +13,7 @@ const App = () => {
     <div className="pt-5">
       <NavbarCustom />
       <BannerSlider options={carouselOptions} />
+      <Products />
     </div>
   );
 };
