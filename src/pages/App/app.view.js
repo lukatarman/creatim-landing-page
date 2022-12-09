@@ -1,12 +1,12 @@
 import NavbarCustom from "../../components/NavbarCustom/navbar.custom.view.js";
-import CarouselCustom from "../../components/CarouselCustom/carousel.custom.view.js";
+import BannerSlider from "../../components/BannerSlider/banner.slider.view.js";
 
 const App = () => {
   return (
     <div>
       <NavbarCustom />
-      <CarouselCustom />
-      <div style={{ marginBottom: "2000px" }}></div>
+      <BannerSlider options={carouselOptions} />
+      
     </div>
   );
 };
