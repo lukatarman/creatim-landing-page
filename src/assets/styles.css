@@ -1,0 +1,22 @@
+/* .custom-row {
+  flex-direction: row !important;
+  width: auto;
+} */
+
+/* .custom-container {
+  width: auto;
+} */
+
+.custom-dropdown {
+  width: 600px;
+}
+
+/* .custom-col {
+  width: 600px;
+} */
+
+@media screen and (max-width: 992px) {
+  .custom-dropdown {
+    width: auto;
+  }
+}
