@@ -2,11 +2,16 @@ import { useEffect, useState } from "react";
 import NavbarCustom from "../../components/NavbarCustom/navbar.custom.view.js";
 import BannerSlider from "../../components/BannerSlider/banner.slider.view.js";
 import Products from "../../components/Products/products.view.js";
-import { getItems, getNewItems } from "../../adapter/mock.http.client.js";
+import {
+  getItems,
+  getNewItems,
+  getFilteredItems,
+} from "../../adapter/mock.http.client.js";
 
 const App = () => {
   const [productList, setProductList] = useState([]);
   const [isFetchingMoreData, setIsFetchingMoreData] = useState(false);
+  const [selectedFilters, setSelectedFilters] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -14,14 +19,18 @@ const App = () => {
       setProductList(response);
     };
 
-    fetchData();
-  }, []);
+    const fetchFilteredData = async () => {
+      const response = await getFilteredItems();
+      setProductList(response);
+    };
+
+    if (selectedFilters.length) fetchFilteredData();
+    if (!selectedFilters.length) fetchData();
+  }, [selectedFilters]);
 
   useEffect(() => {
     const fetchData = async () => {
-      console.log(productList);
       const response = await getNewItems();
-      console.log(response);
       setProductList([...productList, ...response]);
     };
 
@@ -39,7 +48,12 @@ const App = () => {
     <div className="pt-5">
       <NavbarCustom />
       <BannerSlider options={carouselOptions} />
-      <Products products={productList} setFetchingData={setIsFetchingMoreData} />
+      <Products
+        products={productList}
+        filters={selectedFilters}
+        setFilters={setSelectedFilters}
+        setFetchingData={setIsFetchingMoreData}
+      />
     </div>
   );
 };
