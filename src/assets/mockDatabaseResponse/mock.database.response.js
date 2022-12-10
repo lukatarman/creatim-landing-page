@@ -77,3 +77,30 @@ export const fourNewStoreItems = [
     image,
   },
 ];
+
+export const filteredItems = [
+  {
+    name: "Kid's Tommy Hilfiger Shoes",
+    price: "12,99 EUR",
+    sex: "Male",
+    image,
+  },
+  {
+    name: "Kid's Tommy Hilfiger Shoes",
+    price: "12,99 EUR",
+    sex: "Male",
+    image,
+  },
+  {
+    name: "Kid's Tommy Hilfiger Shoes",
+    price: "12,99 EUR",
+    sex: "Male",
+    image,
+  },
+  {
+    name: "Kid's Tommy Hilfiger Shoes",
+    price: "12,99 EUR",
+    sex: "Male",
+    image,
+  },
+];
