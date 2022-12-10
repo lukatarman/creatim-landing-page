@@ -13,7 +13,11 @@ function BannerSlider({ options }) {
     );
   });
 
-  return <Carousel variant="dark">{carouselItems}</Carousel>;
+  return (
+    <Carousel className="mb-5" variant="dark">
+      {carouselItems}
+    </Carousel>
+  );
 }
 
 export default BannerSlider;
