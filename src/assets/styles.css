@@ -2,9 +2,27 @@
   width: 600px;
 }
 
+.dropdown-divider {
+  display: none;
+}
+
 @media screen and (max-width: 992px) {
   .custom-dropdown {
     width: auto;
+  }
+
+  .custom-dropdown-container {
+    max-height: 300px;
+    overflow-y: scroll;
+  }
+}
+
+@media screen and (max-width: 490px) {
+  .dropdown-divider {
+    display: inline;
+    width: 80%;
+    margin: auto;
+    border: 1px solid rgba(241, 241, 241, 0.74);
   }
 }
 

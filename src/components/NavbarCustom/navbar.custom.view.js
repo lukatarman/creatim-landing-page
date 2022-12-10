@@ -13,30 +13,33 @@ const NavbarCustom = () => {
               id="basic-nav-dropdown"
               className="custom-dropdown"
             >
-              <Container>
+              <Container className="custom-dropdown-container">
                 <Row>
-                  <Col className="mb-3">
-                    <label>Men:</label>
+                  <Col className="my-2">
+                    <label className="mx-2">Men:</label>
                     <NavDropdown.Item>Shirts</NavDropdown.Item>
                     <NavDropdown.Item>Pants</NavDropdown.Item>
                     <NavDropdown.Item>Shoes</NavDropdown.Item>
                     <NavDropdown.Item>Accessories</NavDropdown.Item>
                   </Col>
-                  <Col className="mb-3">
-                    <label>Women:</label>
+                  <span className="dropdown-divider"></span>
+                  <Col className="my-2">
+                    <label className="mx-2">Women:</label>
                     <NavDropdown.Item>Shirts</NavDropdown.Item>
                     <NavDropdown.Item>Pants</NavDropdown.Item>
                     <NavDropdown.Item>Shoes</NavDropdown.Item>
                     <NavDropdown.Item>Accessories</NavDropdown.Item>
                   </Col>
-                  <Col className="mb-3">
-                    <label>Kids:</label>
+                  <span className="dropdown-divider"></span>
+                  <Col className="my-2">
+                    <label className="mx-2">Kids:</label>
                     <NavDropdown.Item>Shirts</NavDropdown.Item>
                     <NavDropdown.Item>Pants</NavDropdown.Item>
                     <NavDropdown.Item>Shoes</NavDropdown.Item>
                     <NavDropdown.Item>Accessories</NavDropdown.Item>
                   </Col>
-                  <Col className="mb-3">
+                  <span className="dropdown-divider"></span>
+                  <Col className="my-2 pb-2">
                     <NavDropdown.Item>
                       <strong>Your Account</strong>
                     </NavDropdown.Item>
