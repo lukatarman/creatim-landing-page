@@ -1,22 +1,19 @@
 import { Container, Row, Col, Image } from "react-bootstrap";
-import image from "../../assets/img/shoes.jpg";
 
-const Products = ({ data = [1, 2, 3, 4, 5, 6, 7, 8] }) => {
-  const productItems = data.map((item) => {
+const Products = ({ products }) => {
+  const productItems = products.map((item, index) => {
     return (
-      <Col>
-        <div className="m-5">
+      <Col key={index} className="my-3">
+        <div className="m-3">
           <Image
-            img
-            src={image}
+            img="true"
+            src={item.image}
             height={180}
             width={180}
             className="d-flex flex-column align-items-center mx-auto"
           />
-          <div className="d-flex flex-column align-items-center">
-            Tommy Hilfiger Shoes
-          </div>
-          <div className="d-flex flex-column align-items-center">20,99 EUR</div>
+          <div className="d-flex flex-column align-items-center">{item.name}</div>
+          <div className="d-flex flex-column align-items-center">{item.price}</div>
         </div>
       </Col>
     );
