@@ -1,6 +1,7 @@
 import {
   storeItems,
   fourNewStoreItems,
+  filteredItems,
 } from "../assets/mockDatabaseResponse/mock.database.response.js";
 
 export const getItems = async () => {
@@ -15,6 +16,15 @@ export const getNewItems = async () => {
   return await new Promise((resolve) => {
     setTimeout(() => {
       resolve(fourNewStoreItems);
-    }, 150);
+    }, 250);
+  });
+};
+
+export const getFilteredItems = async (filters) => {
+  // would normally modify api query according to filters here
+  return await new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(filteredItems);
+    }, 350);
   });
 };
