@@ -1,7 +1,8 @@
 import { useEffect } from "react";
 import { Container, Row, Col, Image } from "react-bootstrap";
+import FilterButton from "../FilterButton/filter.button.view.js";
 
-const Products = ({ products, setFetchingData }) => {
+const Products = ({ products, filters, setFilters, setFetchingData }) => {
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
 
@@ -12,6 +13,15 @@ const Products = ({ products, setFetchingData }) => {
 
   const handleScroll = () => {
     if (isPageScrolledToBottom()) setFetchingData(true);
+  };
+
+  const handleFilterClick = (e) => {
+    const clickedFilter = e.target.textContent.toLowerCase();
+    setFilters([...filters, clickedFilter]);
+  };
+
+  const handleRemoveFiltersClick = () => {
+    setFilters([]);
   };
 
   const isPageScrolledToBottom = () => {
@@ -41,7 +51,14 @@ const Products = ({ products, setFetchingData }) => {
 
   return (
     <Container>
-      <h2 className="my-5">Available Products</h2>
+      <h2 className="my-2">Available Products</h2>
+      <div className="p-3">
+        Filter by:
+        <FilterButton name={"Age"} handleClick={handleFilterClick} />
+        {filters.length ? (
+          <FilterButton name={"Remove Filters"} handleClick={handleRemoveFiltersClick} />
+        ) : null}
+      </div>
       <Row lg={4} md={2} sm={2} xs={1}>
         {productItems}
       </Row>
