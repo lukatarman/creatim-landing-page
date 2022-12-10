@@ -1,6 +1,26 @@
+import { useEffect } from "react";
 import { Container, Row, Col, Image } from "react-bootstrap";
 
-const Products = ({ products }) => {
+const Products = ({ products, setFetchingData }) => {
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const handleScroll = () => {
+    if (isPageScrolledToBottom()) setFetchingData(true);
+  };
+
+  const isPageScrolledToBottom = () => {
+    return (
+      window.innerHeight + document.documentElement.scrollTop ===
+      document.documentElement.offsetHeight
+    );
+  };
+
   const productItems = products.map((item, index) => {
     return (
       <Col key={index} className="my-3">
