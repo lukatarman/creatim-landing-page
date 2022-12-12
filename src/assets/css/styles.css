@@ -43,3 +43,7 @@
 .button-filter:hover {
   background-color: #ddd;
 }
+
+.text-align-custom {
+  text-align: center;
+}
