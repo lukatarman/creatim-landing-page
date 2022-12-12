@@ -2,20 +2,20 @@ import { useEffect } from "react";
 
 const ProductsBehavior = (filters, setFilters, setFetchingData) => {
   useEffect(() => {
+    const handleScroll = () => {
+      if (isPageScrolledToBottom()) setFetchingData(true);
+    };
+
     window.addEventListener("scroll", handleScroll);
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
-
-  const handleScroll = () => {
-    if (isPageScrolledToBottom()) setFetchingData(true);
-  };
+  }, [setFetchingData]);
 
   const handleFilterClick = (e) => {
     const clickedFilter = e.target.textContent.toLowerCase();
-    setFilters([...filters, clickedFilter]);
+    if (!filters.includes(clickedFilter)) setFilters([...filters, clickedFilter]);
   };
 
   const handleRemoveFiltersClick = () => {
