@@ -1,7 +1,5 @@
 import image from "../img/shoes.jpg";
 
-export const getStoreItems = () => {};
-
 export const storeItems = [
   {
     name: "Tommy Hilfiger Shoes",
