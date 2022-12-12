@@ -16,18 +16,18 @@ const AppBehavior = () => {
       setProductList(response);
     };
 
-    const fetchFilteredData = async () => {
-      const response = await getFilteredItems();
+    const fetchFilteredData = async (selectedFilters) => {
+      const response = await getFilteredItems(selectedFilters);
       setProductList(response);
     };
 
-    if (selectedFilters.length) fetchFilteredData();
+    if (selectedFilters.length) fetchFilteredData(selectedFilters);
     if (!selectedFilters.length) fetchData();
   }, [selectedFilters]);
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await getNewItems();
+      const response = await getNewItems(selectedFilters, productList);
       setProductList([...productList, ...response]);
     };
 
