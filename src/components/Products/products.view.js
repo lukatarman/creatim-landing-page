@@ -1,35 +1,13 @@
-import { useEffect } from "react";
 import { Container, Row, Col, Image } from "react-bootstrap";
 import FilterButton from "../FilterButton/filter.button.view.js";
+import ProductsBehavior from "./products.behavior.js";
 
 const Products = ({ products, filters, setFilters, setFetchingData }) => {
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
-  const handleScroll = () => {
-    if (isPageScrolledToBottom()) setFetchingData(true);
-  };
-
-  const handleFilterClick = (e) => {
-    const clickedFilter = e.target.textContent.toLowerCase();
-    setFilters([...filters, clickedFilter]);
-  };
-
-  const handleRemoveFiltersClick = () => {
-    setFilters([]);
-  };
-
-  const isPageScrolledToBottom = () => {
-    return (
-      window.innerHeight + document.documentElement.scrollTop ===
-      document.documentElement.offsetHeight
-    );
-  };
+  const [handleFilterClick, handleRemoveFiltersClick] = ProductsBehavior(
+    filters,
+    setFilters,
+    setFetchingData
+  );
 
   const productItems = products.map((item, index) => {
     return (
