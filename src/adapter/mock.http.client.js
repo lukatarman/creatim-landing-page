@@ -21,7 +21,6 @@ export const getNewItems = async (filters, existingProducts) => {
 };
 
 export const getFilteredItems = async (filters) => {
-  // would normally modify api query according to filters here
   return await new Promise((resolve) => {
     setTimeout(() => {
       resolve(getFilteredStoreItems(filters));
