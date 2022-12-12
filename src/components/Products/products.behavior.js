@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 
+//todo implement debounce to scrolling
 const ProductsBehavior = (filters, setFilters, setFetchingData) => {
   useEffect(() => {
     const handleScroll = () => {
