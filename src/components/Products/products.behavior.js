@@ -1,18 +1,29 @@
 import { useEffect } from "react";
 
-//todo implement debounce to scrolling
 const ProductsBehavior = (filters, setFilters, setFetchingData) => {
   useEffect(() => {
     const handleScroll = () => {
+      console.log("scrolled");
       if (isPageScrolledToBottom()) setFetchingData(true);
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", debounce(handleScroll));
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("scroll", debounce(handleScroll));
     };
   }, [setFetchingData]);
+
+  const debounce = (func) => {
+    let timeoutId;
+
+    return () => {
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => {
+        func();
+      }, 200);
+    };
+  };
 
   const handleFilterClick = (e) => {
     const clickedFilter = e.target.textContent.toLowerCase();
