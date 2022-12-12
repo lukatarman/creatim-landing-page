@@ -21,7 +21,7 @@ const App = () => {
         products={productList}
         filters={selectedFilters}
         setFilters={setSelectedFilters}
-        setFetchingData={setIsFetchingMoreData}
+        setIsFetchingData={setIsFetchingMoreData}
       />
     </div>
   );

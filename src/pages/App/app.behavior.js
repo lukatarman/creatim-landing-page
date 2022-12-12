@@ -33,7 +33,7 @@ const AppBehavior = () => {
 
     if (isFetchingMoreData) fetchData();
     setIsFetchingMoreData(false);
-  }, [isFetchingMoreData]);
+  }, [isFetchingMoreData, selectedFilters, productList]);
 
   return [productList, selectedFilters, setSelectedFilters, setIsFetchingMoreData];
 };

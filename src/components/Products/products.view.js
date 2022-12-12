@@ -2,11 +2,11 @@ import { Container, Row, Col, Image } from "react-bootstrap";
 import FilterButton from "../FilterButton/filter.button.view.js";
 import ProductsBehavior from "./products.behavior.js";
 
-const Products = ({ products, filters, setFilters, setFetchingData }) => {
+const Products = ({ products, filters, setFilters, setIsFetchingData }) => {
   const [handleFilterClick, handleRemoveFiltersClick] = ProductsBehavior(
     filters,
     setFilters,
-    setFetchingData
+    setIsFetchingData
   );
 
   const productItems = products.map((item, index) => {
