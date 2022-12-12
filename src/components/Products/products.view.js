@@ -32,7 +32,7 @@ const Products = ({ products, filters, setFilters, setFetchingData }) => {
       <h2 className="my-2">Available Products</h2>
       <div className="p-3">
         Filter by:
-        <FilterButton name={"Age"} handleClick={handleFilterClick} />
+        <FilterButton name={"Kids"} handleClick={handleFilterClick} />
         {filters.length ? (
           <FilterButton name={"Remove Filters"} handleClick={handleRemoveFiltersClick} />
         ) : null}
