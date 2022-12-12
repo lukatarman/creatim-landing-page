@@ -20,8 +20,8 @@ const Products = ({ products, filters, setFilters, setFetchingData }) => {
             width={180}
             className="d-flex flex-column align-items-center mx-auto"
           />
-          <div className="d-flex flex-column align-items-center">{item.name}</div>
-          <div className="d-flex flex-column align-items-center">{item.price}</div>
+          <div className="text-align-custom mb-1">{item.name}</div>
+          <div className="text-align-custom">{item.price}</div>
         </div>
       </Col>
     );
